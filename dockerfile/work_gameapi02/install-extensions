@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# install xhprof
+cd /root/xhprof
+phpize
+./configure
+make
+make install
+echo "extension=tideways_xhprof.so" > $PHPEXTINI/20-xhprof.ini
+make clean

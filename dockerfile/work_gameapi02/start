@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+/usr/sbin/nginx
+/usr/sbin/php-fpm
+/root/start-work
+python3 /opt/mq_consumer.py

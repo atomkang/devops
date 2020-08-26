@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# 运行容器内devops专用redis服务
+#redis-server /etc/redis-devops.conf
+
+# 基本的gitlab授权
+ssh-keyscan $GITHOST > ~/.ssh/known_hosts
+
+# 拉取基本devops环境运维工具
+if [ $AUTOUPDATECODE = 1 ]; then
+    /root/start-code
+   #/root/start-register
+   #/work/reposync/reposync.py &
+fi
+
+# 启动自动服务注册
+#/work/register/register.py &

@@ -1,0 +1,17 @@
+# This repository is safe to use with RHEL/CentOS base repository
+# it only provides additional packages for the PHP stack
+# all dependencies are in base repository or in EPEL
+
+[remi-safe]
+name=Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
+baseurl=https://mirrors.aliyun.com/remi/enterprise/7/safe/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+
+[remi-safe-debuginfo]
+name=Remi's RPM repository for Enterprise Linux 7 - $basearch - debuginfo
+baseurl=https://mirrors.aliyun.com/remi/enterprise/7/debug-remi/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi

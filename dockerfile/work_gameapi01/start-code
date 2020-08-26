@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+#if [ -d /work/reposync ]; then
+#    echo "更新reposync"
+#    cd /work/reposync
+#    git pull
+#    cd -
+#else
+#    echo "创建reposync"
+#    git clone --depth 1 -b $BRANCH git@$GITHOST:devops/reposync.git /work/reposync
+#fi
+
+if [ -d /work/code ]; then
+    echo "更新code"
+    cd /work/code
+    git pull
+    cd -
+else
+    echo "创建code"
+    git clone --depth 1 -b $BRANCH git@$GITHOST:aoyou/server/api/$PROJECT.git /work/code
+    ln -s /work/logs /work/code/logs
+    ln -s /work/tmp /work/code/tmp
+    ln -s /work/run /work/code/run
+fi
+
+if [ -f /work/devops-code-init ]; then
+    echo "运行全局code-init"
+    /work/devops-code-init
+fi
+
+if [ -f /work/code/devops-code-init ]; then
+    echo "运行本地code-init"
+    /work/code/devops-code-init
+fi

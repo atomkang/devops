@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ -d /work/register ]; then
+    echo "更新register"
+    cd /work/register
+    git pull
+    cd -
+else
+    echo "创建register"
+    git clone --depth 1 -b $BRANCH git@$GITHOST:devops/register.git /work/register
+fi

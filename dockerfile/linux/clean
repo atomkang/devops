@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+yum clean all
+rm /anaconda-post.log
+rm -rf /tmp/*
