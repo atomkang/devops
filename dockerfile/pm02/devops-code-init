@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd /work/code
+
+if [ -f composer.json ]; then
+    composer install
+fi

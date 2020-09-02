@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+/usr/sbin/nginx
+/usr/sbin/php-fpm
+/root/start-work
+nohup python3 /opt/mq_consumer.py &
+nohup python3 /opt/apollo-client.py &
+chown -R nginx.nginx /work/code/
